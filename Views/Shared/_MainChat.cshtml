@@ -1,0 +1,90 @@
+<style>
+
+    div.panel-primary {
+        margin-right: 50px;
+        width: 300px;
+        border: 1px solid #0094ff;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+    }
+
+    div.panel-body {
+        min-height: 200px;
+    }
+
+    div.panel-heading {
+        cursor: pointer;
+    }
+
+    textarea {
+        margin: 0px 12px;
+    }
+
+    div.chatMessages {
+        overflow-y:auto;
+        height: 250px;
+        margin-bottom: 10px;
+    }
+
+    .user-sms {
+        margin-top: 15px;
+        background-color: #74b9ff;
+        padding: 5px;
+        word-wrap: break-word;
+        max-width: 90%
+    }
+
+    .admin-sms {
+        margin-top: 10px;
+        background-color: #b2bec3;
+        padding: 5px;
+        word-wrap: break-word;
+        max-width: 90%;
+    }
+</style>
+
+<div class="content">
+    <div class="panel panel-primary">
+
+        <div class="panel-heading" data-toggle="collapse" data-target="#chat">
+            <i class="glyphicon glyphicon-comment"></i> Clique aqui
+        </div>
+
+        <div class=" panel-body collapse" id="chat">
+            <div class="">
+                <div class="chatMessages">
+                    <div class="col-md-12">
+                        <p class="user-sms pull-left">
+                            Olá como vai?
+
+                        </p>
+                    </div>
+
+                    <div class="col-md-12">
+                        <p class="admin-sms pull-right">
+                            Olá como posso ajudar?
+                        </p>
+                    </div>
+                                       
+                </div>
+
+                <div class="messageSend">
+                    <form class="form" >
+                        <div class="form-inline">
+
+                            <div class="row">
+
+                                <textarea class="form-control" id="message" placeholder="Message" required></textarea>
+                                <button class="form-control btn btn-primary" id="send" type="button">Enviar</button>
+
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
