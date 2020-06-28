@@ -178,6 +178,10 @@
       <Content Include="wwwroot\node_modules\font-awesome\scss\_screen-reader.scss" />
       <Content Include="wwwroot\node_modules\font-awesome\scss\_stacked.scss" />
       <Content Include="wwwroot\node_modules\font-awesome\scss\_variables.scss" />
+      <Content Update="wwwroot\app\recolha_dados.js">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
