@@ -39,5 +39,7 @@ function addObj(obj) {
 
     div.appendTo($('.chatMessages'));
 
+    $('.chatMessages').animate({scrollTop:9999999}, 500);
+
     vetObj.push(obj);
 }
