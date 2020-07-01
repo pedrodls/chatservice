@@ -14,9 +14,11 @@ $("#message").on('keypress', function (e){
 });
 
 function iniciar() {
+    if ($("#message").val() == "") return;
     var obj = { text: $("#message").val() };
 
-    addObj(obj);
+    
+        addObj(obj);
 
     $("#message").val("");
 }
