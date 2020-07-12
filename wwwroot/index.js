@@ -1,9 +1,4 @@
 const http = require('http');
-//const io = require('socket.io')();
-// or
-
-
-
 
 const hostname = 'localhost';
 const port = 5050;
@@ -20,14 +15,14 @@ server.listen(port, hostname, () => {
 
 const io = require('socket.io')(server, { origins: '*:*' });
 
-io.on("connection", (o) => {
-    // console.log(o);
+io.on("connection", (socket) => {
+    
     console.log('connection estabilished');
 
-    o.on("*", x => console.log(x))
+    socket.on("*", x => console.log(x))
 
-    o.on('message', data => {
+    socket.on('message', data => {
         console.log(data)
-        o.emit('message', data);
+        socket.emit('message', data);
     })
 })
