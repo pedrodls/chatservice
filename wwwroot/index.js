@@ -26,15 +26,8 @@ io.on("connection", (o) => {
 
     o.on("*", x => console.log(x))
 
-    o.on('message', msg => {
-        console.log(msg)
-
-
-        o.emit('message', 'mensagem recebida');
-
-        if (msg == 'ola')
-            o.emit('message', 'como vai');
+    o.on('message', data => {
+        console.log(data)
+        o.emit('message', data);
     })
-    o.emit('message', 'como vai');
-    o.emit('message', 'mensagem recebida');
 })
