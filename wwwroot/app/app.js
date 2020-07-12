@@ -27,7 +27,7 @@
             alert(message)
         }
         var send=function(msg){
-            client.emit('message',{token:token,targetToken:'',message:'this is my message'});    
+            client.emit('message',{token:_token,targetToken:'backoffice',message:'this is my message'});    
         }
 
 //})
