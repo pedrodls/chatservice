@@ -15,16 +15,19 @@ namespace ChatService.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly ChatContext _db;
 
-        public HomeController( ChatContext db)
+        public HomeController()
         {
-            //_logger = logger;
-            _db = db;
+          
+
+            
         }
 
         public IActionResult Index()
         {
-            var messages = _db.Message.Any();
-            //var data = from a in Message select a orderby a.LastName;
+            var teste = new CriarToken().CriandoToken("Paulo", DateTime.Now.ToString());
+
+            ViewBag.Teste = teste;
+
             return View();
         }
 

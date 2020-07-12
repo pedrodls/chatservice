@@ -6,56 +6,58 @@
     <title>@ViewData["Title"] - ChatService</title>
     <link rel="stylesheet" href="~/node_modules/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="~/css/site.css"/>
+    
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ChatService</a>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ChatService</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Admin</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                </ul>
             </div>
-            <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Admin</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-                </li>
-                <li>
-                    <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+        </nav>
 
-</header>
-<div class="container">
-    <main role="main" class="pb-3">
-        @RenderBody()
-    </main>
-</div>
-
-<footer class="border-top footer text-muted">
+    </header>
     <div class="container">
-        &copy; 2020 - ChatService - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
     </div>
-</footer>
-@{
-    Html.RenderPartial("_MainChat.cshtml");
-}
-<script src="~/node_modules/jquery/dist/jquery.min.js"></script>
-<script src="~/node_modules/bootstrap/dist/js/bootstrap.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
 
-<script src="~/app/recolha_dados.js" asp-append-version="true"></script>
-@RenderSection("Scripts", required: false)
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - ChatService - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    @{
+        Html.RenderPartial("_MainChat.cshtml");
+    }
+    <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="~/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/node_modules/socket.io-client/dist/socket.io.js"></script>
+
+    <script src="~/app/recolha_dados.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
