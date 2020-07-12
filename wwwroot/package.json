@@ -1,21 +1,22 @@
 {
-  "name": "chat_service",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "dependencies": {
-    "bootstrap": "^3.4.1",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.5.1",
-    "socket.io-client": "^2.3.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "socket-server",
+    "version": "1.0.0",
+    "description": "socket server acting like a iddlewere betweens points of sockets",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "dependencies": {
+        "bootstrap": "^3.4.1",
+        "font-awesome": "^4.7.0",
+        "jquery": "^3.5.1",
+        "socket.io-client": "^2.3.0",
+        "socket.io": "^2.3.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
 }

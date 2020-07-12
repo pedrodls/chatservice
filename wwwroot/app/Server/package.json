@@ -1,0 +1,14 @@
+{
+  "name": "socket-server",
+  "version": "1.0.0",
+  "description": "socket server acting like a iddlewere betweens points of sockets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  }
+}
