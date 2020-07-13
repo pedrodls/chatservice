@@ -1,13 +1,12 @@
 //$(function(){  
 
-        var client=io('http://localhost:5050/');
         _token=localStorage.getItem('token');
         _target='backoffice';
         try {
+            var client=io('http://localhost:5050/');
             client.on('connect', function (socket) {
                 $('#bullet-status').attr('class','connected')
                 client.on(_token, function (e) {
-                    alert(e.message)
                     inComming(e.message)
                 })
             })
