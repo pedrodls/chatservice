@@ -19,8 +19,6 @@ io.on("connection", (socket) => {
     
     console.log('connection estabilished');
 
-    socket.on("*", x => console.log(x))
-
     socket.on('message', data => {
         console.log(data)
         socket.emit(data.targetToken, data);
