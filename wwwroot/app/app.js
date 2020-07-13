@@ -1,12 +1,13 @@
 //$(function(){  
 
-        _token='backoffice';//localStorage.getItem('token');
-        _target='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXVsbyI6IjEzLzA3LzIwMjAgMjA6NTg6MjAifQ.zGRrlz_rrM419fXDu-V516c3dkywQGDFsdQkgJXBZt0';
+       // _token='backoffice';//localStorage.getItem('token');
+        //_target='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXVsbyI6IjEzLzA3LzIwMjAgMjA6NTg6MjAifQ.zGRrlz_rrM419fXDu-V516c3dkywQGDFsdQkgJXBZt0';
         try {
             var client=io('http://127.0.0.1:6060/');
             client.on('connect', function (socket) {
                 $('#bullet-status').attr('class','connected')
                 client.on(_token, function (e) {
+                    _target=e.token
                     inComming(e.message)
                 })
             })
