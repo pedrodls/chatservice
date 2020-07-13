@@ -7,3 +7,13 @@
 
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@{
+    Html.RenderPartial("/Views/Shared/_MainChat.cshtml");
+}
+
+@section Scripts{
+
+    <script src="~/app/recolha_dados.js" asp-append-version="true"></script>
+
+}
