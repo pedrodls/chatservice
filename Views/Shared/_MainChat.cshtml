@@ -9,6 +9,7 @@
         right: 0;
         bottom: 0;
         margin-bottom: 0px;
+        z-index:9999
     }
 
     div.panel-body {
@@ -24,7 +25,7 @@
     }
 
     div.chatMessages {
-        overflow-y:auto;
+        overflow-y: auto;
         height: 250px;
         margin-bottom: 10px;
     }
@@ -33,33 +34,36 @@
         margin-top: 15px;
         background-color: #74b9ff;
         padding: 5px;
-        border-radius:20px;
         word-wrap: break-word;
-        max-width: 90%
+        max-width: 90%;
+        border-radius: 10px;
     }
 
     .admin-sms {
         margin-top: 10px;
         background-color: #b2bec3;
         padding: 5px;
-        border-radius:20px;
         word-wrap: break-word;
         max-width: 90%;
+        border-radius: 10px;
     }
-    #bullet-status{
+
+    #bullet-status {
         border-radius: 5px;
         border: 0;
         padding: 5px;
         float: right;
     }
-    #bullet-status.connected{
-        background: #91f100;
+
+        #bullet-status.connected {
+            background: #91f100;
         }
-    #bullet-status.disconnected{
-        background: #FF0000;
-    }
+
+        #bullet-status.disconnected {
+            background: #FF0000;
+        }
 </style>
- 
+
 <div>
     <script>localStorage.setItem('token','@ViewBag.Teste')</script>
 </div>
@@ -77,14 +81,8 @@
 
                 <div class="chatMessages">
                     <div class="col-md-12">
-                        <p class="user-sms pull-left">
+                        <p class="admin-sms pull-left">
                             Olá como posso ajudar?
-                        </p>
-                    </div>
-
-                    <div class="col-md-12">
-                        <p class="admin-sms pull-right">
-                            Olá como vai?
                         </p>
                     </div>
 
