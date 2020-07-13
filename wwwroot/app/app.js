@@ -1,9 +1,9 @@
 //$(function(){  
 
-        _token=localStorage.getItem('token');
-        _target='backoffice';
+        _token='backoffice';//localStorage.getItem('token');
+        _target='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXVsbyI6IjEzLzA3LzIwMjAgMjA6NTg6MjAifQ.zGRrlz_rrM419fXDu-V516c3dkywQGDFsdQkgJXBZt0';
         try {
-            var client=io('http://localhost:5050/');
+            var client=io('http://127.0.0.1:6060/');
             client.on('connect', function (socket) {
                 $('#bullet-status').attr('class','connected')
                 client.on(_token, function (e) {
@@ -23,8 +23,11 @@
             _target=data.token;
             inComming(message)
         }
-        var send=function(msg){
-            client.emit('message',{token:_token,targetToken:_target,message:'this is my message'});    
+        var signIn=function(){
+            client.emit('sign_in',{token:_token});
+        }       
+        var send=function(message){
+            client.emit('message',{token:_token,targetToken:_target,message:message});    
         }
 
 //})

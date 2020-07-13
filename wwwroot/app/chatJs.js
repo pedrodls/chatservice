@@ -16,7 +16,11 @@ function outGoing(message) {
     $('<span/>').addClass('time_date').html('11:01 AM    |    June 9').appendTo(div)
 }
 
-function sendMessage() {
-    outGoing('Hello word')
-    send('hello world')
+function sendMessage(message) {
+    outGoing(message)
+    send(message)
 }
+
+$('.msg_send_btn').on('click',function (e) {
+    sendMessage($('input.write_msg').val())
+})
