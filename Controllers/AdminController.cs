@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using ChatService.Application;
@@ -18,6 +19,9 @@ namespace ChatService.Controllers
         }
         public IActionResult Index()
         {
+            var headers = Request.Headers.TryGetValue("token",out var token);
+            Response.Headers.Add("token", CriarToken.CriandoToken("Paulo"));
+
             return View();
         }
     }

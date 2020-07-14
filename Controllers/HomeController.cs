@@ -24,7 +24,7 @@ namespace ChatService.Controllers
 
         public IActionResult Index()
         {
-            var teste = new CriarToken().CriandoToken("Paulo", DateTime.Now.ToString());
+            var teste = CriarToken.CriandoToken("Paulo");
 
             ViewBag.Teste = teste;
 
