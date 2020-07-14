@@ -45,7 +45,7 @@ function outGoing(sms) {
 
     $('.chatMessages').animate({scrollTop:9999999}, 500);
 
-    //send();
+    send(sms);
 
     //vetObj.push(obj);
 

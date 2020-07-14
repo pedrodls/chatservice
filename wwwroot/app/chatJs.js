@@ -19,8 +19,16 @@ function outGoing(message) {
 function sendMessage(message) {
     outGoing(message)
     send(message)
+    $('input.write_msg').val('')
 }
 
 $('.msg_send_btn').on('click',function (e) {
     sendMessage($('input.write_msg').val())
+})
+
+$('input.write_msg').on('keypress',function (e) {
+    if (e.keyCode == 13) {
+        sendMessage($('input.write_msg').val())
+        return false;
+    }
 })
