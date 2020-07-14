@@ -59,11 +59,20 @@
       width: 88%;
     }
     
-    .chat_people{ overflow:hidden; clear:both;}
+    .chat_people{ overflow:hidden; clear:both; }
+    .chat_list:hover {
+                  background: #ccc;
+                }
+    
+    .chat_list.active{
+         background-color: #fff;
+         box-shadow: 0 0 5px;
+         }
     .chat_list {
       border-bottom: 1px solid #c4c4c4;
       margin: 0;
       padding: 18px 16px 10px;
+      cursor: pointer
     }
     .inbox_chat { height: 550px; overflow-y: scroll;}
     
@@ -180,20 +189,8 @@
           </div>
         </div>
         <div class="inbox_chat">
-          <div class="chat_list active_chat">
-            <!--
-            <div class="chat_people">
-              <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-              <div class="chat_ib">
-                <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                <p>Test, which is a new approach to have all solutions
-                  astrology under one roof.</p>
-              </div>
-            </div>
-            -->
-          </div>
           <div class="chat_list">
-            <!--
+            
             <div class="chat_people">
               <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
               <div class="chat_ib">
@@ -202,7 +199,7 @@
                   astrology under one roof.</p>
               </div>
             </div>
-            -->
+            
           </div>
         </div>
       </div>
