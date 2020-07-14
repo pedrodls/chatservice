@@ -36,14 +36,20 @@ let delay = () => {
         io.sockets.to(clients[i].id).emit('message', 'hello');
     }
 }
+let _socket = '';
 io.on('test', delay)
 io.on("connection", (socket) => {
 
-    socket.on('disconnect', function() {
+    socket.on('disconnect', function(data) {
+        for (var i = 0; i < clients.length; i++)
+            if (clients[i].id == this.id && clients[i].token != 'backoffice') {
+
+                clients.splice(i, 1);
+                break;
+            }
+
         console.log('Got disconnect!');
-        /*
-                var i = allClients.indexOf(socket);
-                allClients.splice(i, 1);*/
+        io.sockets.to(getId('backoffice')).emit('sync_clients', clients);
     });
 
     socket.on('register', function(data) {
@@ -53,6 +59,7 @@ io.on("connection", (socket) => {
         for (var i = 0; i < clients.length; i++)
             if (clients[i].token == data.token) {
                 clients[i].id = socket.id;
+                //clients[i].socket = socket;
                 n = false;
                 break;
             }
@@ -63,7 +70,9 @@ io.on("connection", (socket) => {
             clients.push(client);
         }
 
+        io.sockets.to(getId('backoffice')).emit('sync_clients', clients);
     })
+
     console.log('connection estabilished');
 
     socket.on('test', (someOneSay) => {
