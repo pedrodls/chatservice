@@ -47,7 +47,6 @@ function outGoing(sms) {
 
     send(sms);
 
-    //vetObj.push(obj);
 
 }
 
